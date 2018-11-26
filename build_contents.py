@@ -3,7 +3,10 @@ import sys
 
 # Filename without extension
 def format_name(filename):
-    return " ".join(x[0].upper() + x[1:] for x in filename.split("-") if len(x) > 0)
+    return " ".join(
+        x[0].upper() + x[1:]
+        for x in filename.split("-") 
+        if len(x) > 0)
 
 def main():
     include_cmds = {
@@ -35,9 +38,9 @@ def main():
             subsection_name = format_name(filename)
             file_relpath = os.path.join(".", os.path.relpath(filepath)).replace("\\", "/")
             if fileext == ".tex":
-                print("{}{{{}}}".format(include_cmds[fileext], file_relpath))
+                print("{}{{\"{}\"}}".format(include_cmds[fileext], file_relpath))
             else:
-                print("{}{{{}}}{{{}}}".format(include_cmds[fileext], subsection_name, file_relpath))
+                print("{}{{{}}}{{\"{}\"}}".format(include_cmds[fileext], subsection_name, file_relpath))
 
 if __name__ == "__main__":
     main()

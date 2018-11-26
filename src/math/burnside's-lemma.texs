@@ -1,0 +1,21 @@
+Let $G$ be a finite group that acts on a set $X$. For each $g$ in $G$ let $X^g$ denote the set of elements in $X$ that are fixed by $g$. Burnside's lemma asserts
+the following formula for the number of orbits: $$ |X/G| = \frac{1}{|G|} \sum_{g \in G} |X^g|. $$
+
+\subsubsection*{Example. Coloring a cube with three colors.}
+Let $X$ be the set of $3^6$ possible face color combinations. Let's count the sizes of the fixed sets for each of the $24$ rotations:
+\begin{itemize}
+    \item one 0-degree rotation which leaves all $3^6$ elements of $X$ unchanged
+    \item six 90-degree face rotations, each of which leaves $3^3$ elements of $X$ unchanged
+    \item three 180-degree face rotation, each of which leaves $3^4$ elements of $X$ unchanged
+    \item eight 120-degree vertex rotations, each of which leaves $3^2$ elements of $X$ unchanged
+    \item six 180-degree edge rotations, each of which leaves $3^3$ elements of $X$ unchanged
+\end{itemize}
+The average is then $\frac{1}{24}(3^6+6 \cdotp 3^3 + 3 \cdotp 3^4 + 8 \cdotp 3^2 + 6 \cdotp 3^3) = 57$. For $n$ colors: $\frac{1}{24}(n^6+3n^4+12n^3+8n^2)$.
+
+\subsubsection*{Example. Coloring a circular stripe of $n$ cells with two colors.}
+$X$ is the set of all colored striped (it has $2^n$ elements), $G$ is the group of rotations ($n$ elements - by 0 cells, by 1 cell, ..., by $(n-1)$ cells).
+Let's fix some $K$ and find the number of stripes that are fixed by the rotation by $K$ cells. If a stripe becomes itself after rotation by $K$ cells, then its 1st cell
+must have the same color as its $(1+K \mod n)$-th cell, which is in turn the same as its $(1+2K \mod n)$-th cell, etc., until $mK \mod n = 0$. This will happen when
+$m = n/gcd(K, n)$. Therefore, we have $n/gcd(K, n)$ cells that must all be of the same color. The same will happen when starting from the second cell and so on. Therefore,
+all cells are separated into $gcd(K, n)$ groups, with each group being of one color, and that yields $2^{gcd(K, n)}$ choices. That's why the answer to the original problem is
+$\frac{1}{n} \sum_{k=0}^{n-1} 2^{gcd(k, n)}$.
