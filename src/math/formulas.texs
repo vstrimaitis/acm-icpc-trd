@@ -1,0 +1,8 @@
+$ \sum_{i=1}^{n} i   = \frac{n(n+1)}{2} $;
+$ \sum_{i=1}^{n} i^2 = \frac{n(2n+1)(n+1)}{6} $;
+$ \sum_{i=1}^{n} i^3 = \frac{n^2(n+1)^2}{4} $;
+$ \sum_{i=1}^{n} i^4 = \frac{n(n+1)(2n+1)(3n^2+3n-1)}{30} $;
+$ \sum_{i=a}^{b} c^i = \frac{c^{b+1}-c^a}{c-1}, c \neq 1$;
+$ \sum_{i=1}^{n} a_1+(i-1)d = \frac{n(a_1+a_n)}{2}$;
+$ \sum_{i=1}^{n} a_1 r^{i-1} = \frac{a_1(1-r^n)}{1-r}, r \neq 1 $;
+$ \sum_{i=1}^{\infty} ar^{i-1} = \frac{a_1}{1-r}, |r| \le 1 $.
