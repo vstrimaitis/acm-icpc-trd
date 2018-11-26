@@ -9,6 +9,7 @@ def main():
     include_cmds = {
         ".cpp": "\\includecpp",
         ".sh": "\\includescript",
+        ".tex": "\\input"
         # Can be expanded to more langs if needed
     }
     source_path = os.path.join(os.path.normpath(os.getcwd()), "src")
@@ -32,7 +33,10 @@ def main():
                 continue
             subsection_name = format_name(filename)
             file_relpath = os.path.join(".", os.path.relpath(filepath)).replace("\\", "/")
-            print("{}{{{}}}{{{}}}".format(include_cmds[fileext], subsection_name, file_relpath))
+            if fileext == ".tex":
+                print("{}{{{}}}".format(include_cmds[fileext], file_relpath))
+            else:
+                print("{}{{{}}}{{{}}}".format(include_cmds[fileext], subsection_name, file_relpath))
 
 if __name__ == "__main__":
     main()

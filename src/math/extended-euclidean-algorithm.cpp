@@ -18,4 +18,3 @@ bool solveEq(ll a, ll b, ll c, ll& x, ll& y, ll& g) {
     x *= c/g; y *= c/g;
     return true;
 }
-// All other solutions are of the form x-kb/g and y+ka/g
