@@ -1,0 +1,69 @@
+\documentclass[letterpaper]{article}
+\usepackage{fontspec}
+\usepackage[pdftex]{geometry}
+
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{courier}
+\usepackage{fancyhdr}
+
+\lstset{columns=fullflexible}
+\lstset{basicstyle=\scriptsize\ttfamily}
+\lstset{showspaces=false}
+\lstset{showstringspaces=false}
+
+\geometry{landscape}
+\setlength{\topmargin}{-0.25in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\columnsep}{1in}
+\setlength{\columnseprule}{0.2pt}
+\textwidth 9.5in
+
+\pagestyle{fancy}
+\lhead{Vilnius University (Šimoliūnaitė, Strakšys, Strimaitis)}
+\chead{}
+\rhead{\thepage}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\newcommand{\includecpp}[2]{
+    \subsection{#1}\
+    \lstinputlisting[language=c++, breaklines=true]{#2}
+}
+\newcommand{\includescript}[2]{
+    \subsection{#1}\
+    \lstinputlisting[breaklines=true]{#2}
+}
+
+\begin{document}
+\thispagestyle{fancy}
+\pagenumbering{Roman}
+
+\begin{center}
+	\Huge\textsc{ACM-ICPC Team Reference Document}
+
+	\huge Vilnius University (Šimoliūnaitė, Strakšys, Strimaitis)
+
+	\vspace{0.50cm}
+\end{center}
+
+\begin{multicols*}{2}
+	\tableofcontents
+\end{multicols*}
+
+\enlargethispage*{\baselineskip}
+\pagebreak
+
+% == CONTENTS == %
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\begin{multicols*}{2}
+	\input{contents.tex}
+\end{multicols*}
+\end{document}
