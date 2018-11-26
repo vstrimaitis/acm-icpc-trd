@@ -1,0 +1,17 @@
+Let's say we have some numbers $m_i$, which are all mutually coprime. Also, let $M = \prod_{i} m_i$. Then the system of congruences
+\[\left\{
+    \begin{array}{lr}
+        x \equiv a_1 \pmod {m_1} \\
+        x \equiv a_2 \pmod {m_2} \\
+        \ldots \\
+        x \equiv a_k \pmod {m_k}
+    \end{array}
+\right.
+\]
+
+is equivalent to $x \equiv A \pmod {M}$ and there exists a unique number $A$ satisfying $0 \leq A \le M$.
+
+Solution for two: $x \equiv a_1 \pmod{m_1}, x \equiv a_2 \pmod{m_2}$. Let $x = a_1 + k m_1$. Substituting into the second congruence: $km_1 \equiv a_2-a_1 \pmod{m_2}$.
+Then, $k = (m_1)_{m_2}^{-1} (a_2-a_1) \pmod{m_2}$. and we can easily find $x$. This can be extended to multiple equations by solving them one-by-one.
+
+If the moduli are not coprime, solve the system $y \equiv 0 \pmod{\frac{m_1}{g}}, y \equiv \frac{a_2-a_1}{g} \pmod{\frac{m_2}{g}}$ for $y$. Then let $x \equiv gy+a_1 \pmod{\frac{m_1 m_2}{g}}$.
