@@ -1,0 +1,3 @@
+Define $A \bigodot B = C \iff C_{ij} = min_{p=1..n}(A_{ip} + B_{pj})$.
+Let $G$ be the adjacency matrix of a graph. Also, let $L_k = G \bigodot \ldots \bigodot G = G^{\bigodot k}$.
+Then the value $L_k[i][j]$ denotes the length of the shortest path between $i$ and $j$ which consists of exactly $k$ edges.

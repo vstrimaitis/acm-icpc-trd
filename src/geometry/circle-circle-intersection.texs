@@ -1,0 +1,5 @@
+Let's say that the first circle is centered at $(0, 0)$ (if it's not, we can move the origin to the center of the
+first circle and adjust the coordinates), and the second one is at $(x_2, y_2)$. Then, let's construct a line
+$Ax+By+C=0$, where $A=-2x_2, B=-2y_2, C=x_2^2+y_2^2+r_1^2-r_2^2$. Finding the intersection between this line and the
+first circle will give us the answer. The only tricky case: if both circles are centered at the same point. We handle
+this case separately.

@@ -1,0 +1,2 @@
+Let $G$ be the adjacency matrix of a graph. Then $C_k = G^k$ gives a matrix, in which the value $C_k[i][j]$
+gives the number of paths between $i$ and $j$ of length $k$.

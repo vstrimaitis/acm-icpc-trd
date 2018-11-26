@@ -1,0 +1,2 @@
+Let's say we have a line segment from $(x_1, y_1)$ to $(x_2, y_2)$. Then, the number of lattice points on this segment is given by
+$$gcd(x_2-x_1, y_2-y_1)+1.$$
