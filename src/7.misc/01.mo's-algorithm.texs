@@ -1,0 +1,7 @@
+Mo's algorithm processes a set of range queries on a static array. Each query is to calculate something base on the array values in a range
+$[a, b]$. The queries have to be known in advance. Let's divide the array into blocks of size $k = O(\sqrt{n})$. A query $[a_1, b_1]$ is
+processed before query $[a_2, b_2]$ if $\floor{\frac{a_1}{k}} < \floor{\frac{a_2}{k}}$ or $\floor{\frac{a_1}{k}} = \floor{\frac{a_2}{k}}$ and $b_1 < b_2$.
+
+Example problem: counting number of distinct values in a range. We can process the queries in the described order and keep an array \texttt{count}, which knows
+how many times a certain value has appeared. When moving the boundaries back and forth, we either increase $\text{count}[x_i]$ or decrease it. According to
+value of it, we will know how the number of distinct values has changed (e.g. if $\text{count}[x_i]$ has just become $1$, then we add $1$ to the answer, etc.).
