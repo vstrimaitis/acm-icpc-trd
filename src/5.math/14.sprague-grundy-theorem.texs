@@ -1,0 +1,19 @@
+We have a game which fulfills the following requirements:
+\begin{itemize}
+    \item There are two players who move alternately.
+    \item The game consists of states, and the possible moves in a state do not depend on whose turn it is.
+    \item The game ends when a player cannot make a move.
+    \item The game surely ends sooner or later.
+    \item The players have complete information about the states and allowed moves, and there is no randomness in the game.
+\end{itemize}
+\textbf{Grundy Numbers.} The idea is to calculate Grundy numbers for each game state. It is calculated like so: $mex(\{g_1, g_2, ..., g_n\})$,
+where $g_1, g_2, ..., g_n$ are the Grundy numbers of the states which are reachable from the current state. $mex$ gives the smallest nonnegative number that
+is not in the set ($mex(\{0, 1, 3\}) = 2, mex(\emptyset) = 0$). If the Grundy number of a state is $0$, then this state is a losing state. Otherwise it's a winning
+state.
+
+\textbf{Grundy's Game.} Sometimes a move in a game divides the game into subgames that are independent of each other. In this case, the Grundy number of a game state is
+$mex(\{g_1, g_2, ..., g_n\}), g_k = a_{k,1} \oplus a_{k,2} \oplus ... \oplus a_{k,m}$ meaning that move $k$ divides the game into $m$ subgames whose Grundy numbers are $a_{i,j}$.
+
+\textbf{Example.} We have a heap with $n$ sticks. On each turn, the player chooses a heap and divides it into two nonempty heaps such that the heaps are of different size. The player
+who makes the last move wins the game. Let $g(n)$ denote the Grundy number of a heap of size $n$. The Grundy number can be calculated by going though all possible ways to divide the heap into
+two parts. E.g. $g(8) = mex(\{g(1) \oplus g(7), g(2) \oplus g(6), g(3) \oplus g(5)\}).$ Base case: $g(1) = g(2) = 0$, because these are losing states.
