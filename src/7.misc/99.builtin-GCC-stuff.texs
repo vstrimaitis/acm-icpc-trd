@@ -1,0 +1,8 @@
+\begin{itemize}
+    \item \texttt{\_\_builtin\_clz(x)}: the number of zeros at the beginning of the bit representation.
+    \item \texttt{\_\_builtin\_ctz(x)}: the number of zeros at the end of the bit representation.
+    \item \texttt{\_\_builtin\_popcount(x)}: the number of ones in the bit representation.
+    \item \texttt{\_\_builtin\_parity(x)}: the parity of the number of ones in the bit representation.
+    \item \texttt{\_\_gcd(x, y)}: the greatest common divisor of two numbers.
+    \item \texttt{\_\_int128\_t}: the 128-bit integer type. Does not support input/output.
+\end{itemize}
