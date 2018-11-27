@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS
+#pragma comment(linker, "/STACK:167772160000")
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <cstdio>
+#include <cstdlib>
+#include <cassert>
+#include <climits>
+#include <cmath>
+#include <algorithm>
+#include <cstring>
+#include <string>
+#include <vector>
+#include <list>
+#include <stack>
+#include <set>
+#include <bitset>
+#include <queue>
+#include <map>
+#include <sstream>
+#include <functional>
+#include <unordered_map>
+#include <unordered_set>
+#include <complex>
+#include <random>
+#include <chrono>
