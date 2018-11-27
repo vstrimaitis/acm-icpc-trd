@@ -8,6 +8,9 @@ def format_name(filename):
         for x in filename.split("-") 
         if len(x) > 0)
 
+def remove_number(name):
+    return name[name.index(".")+1:]
+
 def main():
     include_cmds = {
         ".cpp": "\\includecpp",
@@ -23,7 +26,7 @@ def main():
         if not os.path.isdir(dirpath):
             # Might be a file
             continue
-        section_name = format_name(dirname)
+        section_name = format_name(remove_number(dirname))
         print("\section{{{}}}".format(section_name))
 
         for file in os.listdir(dirpath):
@@ -35,7 +38,7 @@ def main():
             if fileext not in include_cmds.keys():
                 sys.stderr.write("Found unsupported source file {}. Skipping.\n".format(filepath))
                 continue
-            subsection_name = format_name(filename)
+            subsection_name = format_name(remove_number(filename))
             file_relpath = os.path.join(".", os.path.relpath(filepath)).replace("\\", "/")
             if fileext == ".tex":
                 print("{}{{\"{}\"}}".format(include_cmds[fileext], file_relpath))
