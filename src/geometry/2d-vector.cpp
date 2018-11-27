@@ -43,6 +43,9 @@ struct Vec {
     ld angle(const Vec& other) { // angle between this and other vector
         return acosl((*this)*other/len()/other.len());
     }
+    Vec perp() {
+        return Vec(-y, x);
+    }
 };
 /* Cross product of 3d vectors: (ay*bz-az*by, az*bx-ax*bz, ax*by-ay*bx)
  */
