@@ -1,6 +1,6 @@
-\documentclass[letterpaper]{article}
+\documentclass[a4paper]{article}
 \usepackage{fontspec}
-\usepackage[pdftex]{geometry}
+\usepackage[a4paper, xetex]{geometry}
 
 \usepackage{listings}
 \usepackage{amssymb}
@@ -11,16 +11,17 @@
 
 \lstset{columns=fullflexible}
 \lstset{basicstyle=\scriptsize\ttfamily}
-\lstset{showspaces=false}
-\lstset{showstringspaces=false}
-
-\geometry{landscape}
-\setlength{\topmargin}{-0.25in}
-\setlength{\oddsidemargin}{0in}
-\setlength{\evensidemargin}{0in}
+%\lstset{showspaces=false}
+%\lstset{showstringspaces=false}
+%
+\geometry{portrait}
+%\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.5in}
+%\setlength{\evensidemargin}{-in}
 \setlength{\columnsep}{1in}
 \setlength{\columnseprule}{0.2pt}
-\textwidth 9.5in
+\textwidth 180mm
+\textheight 245mm
 
 \pagestyle{fancy}
 \lhead{Vilnius University (Šimoliūnaitė, Strakšys, Strimaitis)}
@@ -55,11 +56,11 @@
 	\vspace{0.50cm}
 \end{center}
 
-\begin{multicols*}{3}
+\begin{multicols*}{2}
     \tableofcontents
+
     \pagenumbering{arabic}
     \setcounter{page}{1}
-
     \input{contents.tex}
 \end{multicols*}
 
