@@ -55,19 +55,23 @@
 	\vspace{0.50cm}
 \end{center}
 
-\begin{multicols*}{2}
-	\tableofcontents
+\begin{multicols*}{3}
+    \tableofcontents
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+
+    \input{contents.tex}
 \end{multicols*}
 
-\enlargethispage*{\baselineskip}
-\pagebreak
+%\enlargethispage*{\baselineskip}
+%\pagebreak
 
 % == CONTENTS == %
 
-\pagenumbering{arabic}
-\setcounter{page}{1}
-
-\begin{multicols*}{2}
-	\input{contents.tex}
-\end{multicols*}
+%\pagenumbering{arabic}
+%\setcounter{page}{1}
+%
+%\begin{multicols*}{2}
+%	\input{contents.tex}
+%\end{multicols*}
 \end{document}
