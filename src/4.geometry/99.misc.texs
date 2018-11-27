@@ -1,0 +1,66 @@
+\subsubsection*{Distance from point to line.}
+We have a line $l(t) = \vec{a} + \vec{b}t$ and a point $\vec{p}$. The distance from this point to the line can be calculated
+by expressing the area of a triangle in two different ways. The final formula: $d = \frac{(\vec{p}-\vec{a}) \times (\vec{p}-\vec{b})}{|\vec{b}-\vec{a}|}$
+
+\subsubsection*{Point in polygon.}
+Send a ray (half-infinite line) from the points to an arbitrary direction and calculate the number of times it touches the boundary of the polygon. If the number
+is odd, the point is inside the polygon, otherwise it's outside.
+
+\subsubsection*{Using cross product to test rotation direction.}
+Let's say we have vectors $\vec{a}$, $\vec{b}$ and $\vec{c}$. Let's define $\vec{ab} = b-a, \vec{bc} = c-b$ and $s = sgn(\vec{ab} \times \vec{bc})$.
+If $s = 0$, the three points are collinear. If $s = 1$, then $\vec{bc}$ turns in the counterclockwise direction compared to the direction of $\vec{ab}$.
+Otherwise it turns in the clockwise direction.
+
+\subsubsection*{Line segment intersection.}
+The problem: to check if line segments $ab$ and $cd$ intersect. There are three cases:
+\begin{enumerate}
+    \item \textbf{The line segments are on the same line.} Use cross products and check if they're zero - this will tell if all points are on the
+    same line. If so, sort the points and check if their intersection is non-empty. If it is non-empty, there are an infinite number of intersection points.
+    \item \textbf{The line segments have a common vertex.} Four possibilities: $a=c, a=d, b=c, b=d$.
+    \item \textbf{There is exactly one intersection point that is not an endpoint.} Use cross product to check if points $c$ and $d$ are on different
+    sides of the line going through $a$ and $b$ and if the points $a$ and $b$ are on different sides of the line going through $c$ and $d$.
+\end{enumerate}
+
+\subsubsection*{Angle between vectors.}
+$arccos(\frac{\vec{a} \cdotp \vec{b}}{|\vec{a}| \cdotp |\vec{b}|})$.
+
+\subsubsection*{Dot product properties.}
+If the dot product of two vectors is zero, the vectors are orthogonal. If it is positive, the angle is acute. Otherwise it is obtuse.
+
+\subsubsection*{Lines with line equation.}
+Any line can be described by an equation $ax+by+c=0$.
+\begin{itemize}
+    \item Construct a line using two points $A$ and $B$:
+        \begin{enumerate}
+            \item Take vector from $A$ to $B$ and rotate it 90 degrees ($(x, y) \rightarrow (-y, x)$). This will be $(a, b)$.
+            \item Normalize this vector. Then put $A$ (or $B$) into the equation and solve for $c$.
+        \end{enumerate}
+    \item Distance from point to line: put point coordinates into line equation and take absolute value. If $(a, b)$ is not normalized, you still
+        need to divide by $\sqrt{a^2+b^2}$.
+    \item Distance between two parallel lines: $|c_1-c_2|$ (if they are not normalized, you still need to divide by $\sqrt{a^2+b^2}$).
+    \item Project a point onto a line: compute signed distance $d$ between line $L$ and point $P$. Answer is $P-d\vec{(a, b)}$.
+    \item Build a line parallel to a given one and passing through a given point: compute the signed distance $d$ between line and point. Answer is $ax+by+(c-d)=0$.
+    \item Intersect two lines: $d = a_1b_2-a_2b_1, x = \frac{c_2b_1-c_1b_2}{d}, y = \frac{c_1a_2-c_2a_1}{d}$. If $abs(d) < \epsilon$, then the lines are parallel.
+\end{itemize}
+
+\subsubsection*{Half-planes.}
+Definition: define as line, assume a point $(x, y)$ belongs to half plane iff $ax+by+c \geq 0$.
+
+Intersecting with a convex polygon:
+\begin{enumerate}
+    \item Start at any point and move along the polygon's traversal.
+    \item Alternate points and segments between consecutive points.
+    \item If point belongs to half-plane, add it to the answer.
+    \item If segment intersects the half-plane's line, add it to the answer.
+\end{enumerate}
+
+\subsubsection*{Some more techniques.}
+\begin{itemize}
+    \item Check if point $A$ lies on segment $BC$:
+        \begin{enumerate}
+            \item Compute point-line distance and check if it is 0 (abs less than $\epsilon$).
+            \item $\vec{BA} \cdotp \vec{BC} \geq 0$ and $\vec{CA} \cdotp \vec{CB} \geq 0$.
+        \end{enumerate}
+    \item Compute distance between line segment and point: project point onto line formed by the segment. If this point is on the segment, then the distance between it and
+        original point is the answer. Otherwise, take minimum of distance between point and segment endpoints.
+\end{itemize}
