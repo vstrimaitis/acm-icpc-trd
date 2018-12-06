@@ -32,13 +32,11 @@ struct LazySegTree {
     }
 
     int query(int v, int tl, int tr, int l, int r) {
-        if (l > r)
-            return -OO;
-        if (tl == tr)
-            return t[v];
+        if (l > r || r < tl || l > tr) return -OO;
+        if (l <= tl && tr <= r) return t[v];
         push(v);
         int tm = (tl + tr) / 2;
-        return max(query(v*2, tl, tm, l, min(r, tm)), 
-                query(v*2+1, tm+1, tr, max(l, tm+1), r));
+        return max(query(v*2, tl, tm, l, r), 
+                query(v*2+1, tm+1, tr, l, r));
     }
 };
