@@ -1,0 +1,31 @@
+\begin{enumerate}
+    \item Convex Hull 1:
+        \begin{itemize}
+            \item Recurrence: $dp[i] = \min_{j<i}\{dp[j]+b[j] \cdotp a[i]\}$
+            \item Condition: $b[j] \geq b[j+1], a[i] \leq a[i+1]$
+            \item Complexity: $\mathcal{O}(n^2) \rightarrow \mathcal{O}(n)$
+        \end{itemize}
+    \item Convex Hull 2:
+        \begin{itemize}
+            \item Recurrence: $dp[i][j] = \min_{k<j}\{dp[i-1][k]+b[k] \cdotp a[j]\}$
+            \item Condition: $b[k] \geq b[k+1], a[j] \leq a[j+1]$
+            \item Complexity: $\mathcal{O}(kn^2) \rightarrow \mathcal{O}(kn)$
+        \end{itemize}
+    \item Divide and Conquer:
+        \begin{itemize}
+            \item Recurrence: $dp[i][j] = \min_{k<j}\{dp[i-1][k]+C[k][j]\}$
+            \item Condition: $A[i][j] \leq A[i][j+1]$
+            \item Complexity: $\mathcal{O}(kn^2) \rightarrow \mathcal{O}(kn\log(n))$
+        \end{itemize}
+    \item Knuth:
+        \begin{itemize}
+            \item Recurrence: $dp[i][j] = \min_{i<k<j}\{dp[i][k]+dp[k][j]\}+C[i][j]$
+            \item Condition: $A[i][j-1] \leq A[i][j] \leq A[i+1][j]$
+            \item Complexity: $\mathcal{O}(n^3) \rightarrow \mathcal{O}(n^2)$
+        \end{itemize}
+\end{enumerate}
+Notes:
+\begin{itemize}
+    \item $A[i][j]$ - the smallest $k$ that gives the optimal answer
+    \item $C[i][j]$ - some given cost function
+\end{itemize}
